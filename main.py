@@ -13,19 +13,19 @@ def main():
     #     )
 
 
-    dest_dir = 'export/fulls'
+    dest_dir = '/Users/kevin/Documents/python_projects/osxphotosyncer/export/fulls'
     for p in photos:
 
         if p.hasadjustments:
             if '.jpg' in p.original_filename or '.jpeg' in p.original_filename:
-                p.export(dest_dir, p.date.strftime('%Y%m%d') + '_' + p.description + '.jpg', edited=True)
+                p.export(dest_dir, p.date.strftime('%Y%m%d') + '_' + p.description + '.jpg', edited=True, use_photos_export=True)
             else:
-                p.export(dest_dir, p.date.strftime('%Y%m%d') + '_' + p.description + '.HEIC', edited=True)
+                p.export(dest_dir, p.date.strftime('%Y%m%d') + '_' + p.description + '.HEIC', edited=True, use_photos_export=True)
         else:
             if '.jpg' in p.original_filename or '.jpeg' in p.original_filename:
-                p.export(dest_dir, p.date.strftime('%Y%m%d') + '_' + p.description + '.jpg')
+                p.export(dest_dir, p.date.strftime('%Y%m%d') + '_' + p.description + '.jpg', use_photos_export=True)
             else:
-                p.export(dest_dir, p.date.strftime('%Y%m%d') + '_' + p.description + '.HEIC')
+                p.export(dest_dir, p.date.strftime('%Y%m%d') + '_' + p.description + '.HEIC', use_photos_export=True)
 
 
 if __name__ == "__main__":
