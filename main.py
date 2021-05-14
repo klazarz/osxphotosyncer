@@ -17,12 +17,12 @@ def main():
     for p in photos:
 
         if p.hasadjustments:
-            if '.jpg' in p.original_filename or '.jpeg' in p.original_filename:
+            if  p.original_filename.lower().endswith('.jpg') or p.original_filename.lower().endswith('.jpeg'):
                 p.export(dest_dir, p.date.strftime('%Y%m%d') + '_' + p.description + '.jpg', edited=True, use_photos_export=True)
             else:
                 p.export(dest_dir, p.date.strftime('%Y%m%d') + '_' + p.description + '.HEIC', edited=True, use_photos_export=True)
         else:
-            if '.jpg' in p.original_filename or '.jpeg' in p.original_filename:
+            if p.original_filename.lower().endswith('.jpg') or p.original_filename.lower().endswith('.jpeg'):
                 p.export(dest_dir, p.date.strftime('%Y%m%d') + '_' + p.description + '.jpg', use_photos_export=True)
             else:
                 p.export(dest_dir, p.date.strftime('%Y%m%d') + '_' + p.description + '.HEIC', use_photos_export=True)
