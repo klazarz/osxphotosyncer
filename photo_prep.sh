@@ -23,9 +23,11 @@ fi;
 
 #resize
 mogrify -format jpg -path /Users/kevin/Documents/python_projects/osxphotosyncer/export/fulls -resize 2000x2000^ /Users/kevin/Documents/python_projects/osxphotosyncer/export/fulls/*.jpg
+mogrify -format jpg -path /Users/kevin/Documents/python_projects/osxphotosyncer/export/fulls -resize 2000x2000^ /Users/kevin/Documents/python_projects/osxphotosyncer/export/fulls/*.JPG
 
 #create thumbnails
 mogrify -thumbnail 400x400^ -gravity north -extent 400x400 -path /Users/kevin/Documents/python_projects/osxphotosyncer/export/thumbs -format jpg /Users/kevin/Documents/python_projects/osxphotosyncer/export/fulls/*.jpg
+mogrify -thumbnail 400x400^ -gravity north -extent 400x400 -path /Users/kevin/Documents/python_projects/osxphotosyncer/export/thumbs -format jpg /Users/kevin/Documents/python_projects/osxphotosyncer/export/fulls/*.JPG
 
 #copy everything to hafur@oracle
 scp -r /Users/kevin/Documents/python_projects/osxphotosyncer/export/* $ssh_server:input/.
