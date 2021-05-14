@@ -27,7 +27,6 @@ mogrify -format jpg -path /Users/kevin/Documents/python_projects/osxphotosyncer/
 
 #create thumbnails
 mogrify -thumbnail 400x400^ -gravity north -extent 400x400 -path /Users/kevin/Documents/python_projects/osxphotosyncer/export/thumbs -format jpg /Users/kevin/Documents/python_projects/osxphotosyncer/export/fulls/*.jpg
-mogrify -thumbnail 400x400^ -gravity north -extent 400x400 -path /Users/kevin/Documents/python_projects/osxphotosyncer/export/thumbs -format jpg /Users/kevin/Documents/python_projects/osxphotosyncer/export/fulls/*.JPG
 
 #copy everything to hafur@oracle
 scp -r /Users/kevin/Documents/python_projects/osxphotosyncer/export/* $ssh_server:input/.
